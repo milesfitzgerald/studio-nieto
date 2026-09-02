@@ -1,8 +1,7 @@
 # Studio Nieto — site clone
 
-A static, dependency-free recreation of [studionieto.com](https://www.studionieto.com/):
-a Brooklyn creative studio, founded by Cristina Ramirez Nieto, that helps brands tell
-their story on social media.
+A static, dependency-free recreation of [studionieto.com](https://www.studionieto.com/),
+rebuilt from the site's Framer export as plain HTML, CSS, and a few lines of JS.
 
 ## Run it
 
@@ -15,19 +14,23 @@ python3 -m http.server 8000
 
 ## Structure
 
-- `index.html` — single-page site: hero, highlights strip, services, work (The Modern Chair
-  case study plus three sample cards), approach, about, contact form, footer
-- `assets/styles.css` — layout, typography (Fraunces + Inter via Google Fonts), responsive rules
-- `assets/main.js` — mobile nav, scroll-reveal, demo form handler, footer year
-- `assets/favicon.svg`
+- `index.html` — single page, same sections and anchors as the original:
+  sticky nav, hero (`#home`), `#about`, `#what-we-do`, `#clients`, `#just-for-fun`, `#contact`
+- `assets/styles.css` — Syne typography presets, the four design tokens
+  (background, yellow, green, blue-gray), radial section washes, desktop (1200px)
+  and mobile (<1200px) layouts, appear animations
+- `assets/main.js` — scroll-triggered fade-in for the client logos and social icons
+- `assets/fetch-assets.sh` — optional: downloads the images and video and
+  rewrites `index.html` to use local copies
 
-## What is inferred
+## Assets
 
-The live site could not be fetched from the build environment, so the layout and
-imagery are an original design based on the studio's public positioning (tagline,
-services, The Modern Chair project, founder bio). Things to replace with the real
-content:
+Images and the About video are loaded from the original Framer CDN
+(`framerusercontent.com`), exactly as the live site does. To self-host them run:
 
-- The three sample work cards under "Selected work"
-- The portrait placeholder in "About"
-- The contact form action (currently a client-side demo)
+```sh
+./assets/fetch-assets.sh
+```
+
+The social icons (LinkedIn, Twitter, Instagram, TikTok) are inline SVGs, since
+the originals are rendered by Framer components at runtime.
