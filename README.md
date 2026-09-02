@@ -20,19 +20,15 @@ python3 -m http.server 8000
   (background, yellow, green, blue-gray), radial section washes, desktop (1200px)
   and mobile (<1200px) layouts, appear animations
 - `assets/main.js` — scroll-triggered fade-in for the client logos and social icons
-- `assets/fetch-assets.sh` — downloads the remote images and video and
-  rewrites `index.html` to use local copies
+- `assets/fetch-assets.sh` — re-downloads the original images and video into `assets/img/`
 
 ## Assets
 
-Images and the About video are currently loaded from the original site's CDN.
-To self-host them, run this once from the repo root:
+Images and the About video are self-hosted under `assets/img/` with descriptive
+filenames (`wordmark.png`, `about.mp4`, `client-1.png`, and so on). The only external
+dependency is the Google Fonts stylesheet for Syne.
 
-```sh
-./assets/fetch-assets.sh
-```
-
-After that, `index.html` references `assets/img/` only and has no remaining
-external dependencies apart from the Google Fonts stylesheet for Syne.
+`assets/fetch-assets.sh` re-downloads the originals into those filenames if they
+ever need refreshing.
 
 The social icons (LinkedIn, Twitter, Instagram, TikTok) are inline SVGs.
