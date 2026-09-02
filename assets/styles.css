@@ -1,5 +1,5 @@
-/* Studio Nieto — recreated from the Framer build.
-   Tokens match the original site's design tokens. */
+/* Studio Nieto — site styles.
+   Tokens match the original site design tokens. */
 :root {
   --bg: rgb(210, 207, 195);
   --black: rgb(0, 0, 0);
@@ -22,7 +22,7 @@ h1, h2, h3, p { margin: 0; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 
-/* Type presets (from the Framer style presets) */
+/* Type presets */
 h2 {
   font-family: var(--font);
   font-size: 72px;
@@ -55,7 +55,7 @@ h3 {
   color: #333333;
 }
 
-/* Page frame: the Framer page is a 1200px column with 60px gaps */
+/* Page frame: a 1200px column with 60px gaps */
 .page {
   width: 1200px;
   max-width: 100%;
@@ -277,7 +277,7 @@ h3 {
 .contact__social a:hover { color: #fff; }
 .contact__social svg { width: 100%; height: 100%; fill: currentColor; }
 
-/* Appear animations (mirrors the Framer appear effects) */
+/* Appear animations */
 .appear--pop {
   opacity: 0.001;
   transform: perspective(1200px) scale(0.5) rotate(var(--rot, 0deg));
@@ -302,14 +302,14 @@ h3 {
   html { scroll-behavior: auto; }
 }
 
-/* Tablet type scale (Framer 810–1199 presets) */
+/* Tablet type scale (810–1199px) */
 @media (max-width: 1199px) {
   h2 { font-size: 46px; }
   h3 { font-size: 32px; }
   .service p.service__name { font-size: 24px; }
 }
 
-/* Mobile layout (Framer's 390px breakpoint, applied below 1200px) */
+/* Mobile layout (below 1200px) */
 @media (max-width: 1199px) {
   .desktop-only { display: none; }
   .page { gap: 0; }

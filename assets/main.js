@@ -1,6 +1,6 @@
 (function () {
   // Fade in the client logos and social row once they scroll into view,
-  // matching the Framer scroll-triggered appear effects.
+  // as a scroll-triggered appear effect.
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
