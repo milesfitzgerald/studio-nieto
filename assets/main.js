@@ -15,4 +15,7 @@
   } else {
     items.forEach(function (el) { el.classList.add('is-visible'); });
   }
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = String(new Date().getFullYear());
 })();
